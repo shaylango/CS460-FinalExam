@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Shayla Ngo
+Student ID:   828275819
 
 INSTRUCTIONS
 ------------
