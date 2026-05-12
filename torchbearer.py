@@ -25,16 +25,12 @@ import heapq
 # =============================================================================
 
 def explain_problem():
-    """
-    Returns
-    -------
-    str
-        Your Part 1 README answers, written as a string.
-        Must match what you wrote in README Part 1.
-
-    TODO
-    """
-    return "TODO"
+    return(
+        "- A single shortest-path run from S is not enough because it'll only find the min distance to each node, "
+        "but not the best order for visiting multiple relics.\n"
+        "- The decision that remains after all inter-location costs are known is the best order for visiting all the relics.\n"
+        "- This requires a search over orders because there are different costs depending on the order of relics."
+    )
 
 
 # =============================================================================
