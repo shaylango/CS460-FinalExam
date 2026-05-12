@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  A single shortest-path run from S is not enough because it'll only find the min distance to each node, but not the best order for visiting multiple relics.
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  The decision that remains after all inter-location costs are known is the best order for visiting all the relics.
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  This requires a search over orders because there are different costs depending on the order of relics.
 
 ---
 
