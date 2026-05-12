@@ -15,7 +15,7 @@
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+Before writing any code, I think my plan is that I will first implement explain_problem(), and just go in that order. The part I expect to be difficult is probably part 5, which is the state and search space since I have to correctly track multiple variables while also exploring a large search space. Lastly, I plan to test using the provided tests.
 
 ---
 
