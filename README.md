@@ -54,10 +54,10 @@
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** k + 1
+- **Cost per run:** O(mlogn)
+- **Total complexity:** O((k + 1) mlogn)
+- **Justification (one line):** Runs once from spawn and once from each relic.
 
 ---
 

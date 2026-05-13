@@ -49,7 +49,7 @@ def run_dijkstra(graph, source):
 
     while priority_queue:
         current_distance, current_node = heapq.heappop(priority_queue)
-        
+
         if current_distance > distances[current_node]:
             continue
 
@@ -63,23 +63,13 @@ def run_dijkstra(graph, source):
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-    spawn : node
-    relics : list[node]
-    exit_node : node
+    distance_table = {}
+    sources = select_sources(spawn, relics, exit_node)
 
-    Returns
-    -------
-    dict[node, dict[node, float]]
-        Nested structure supporting dist_table[u][v] lookups
-        for every source u your design requires.
-
-    TODO
-    """
-    pass
+    for source in sources:
+        distance_table[source] = run_dijkstra(graph, source)
+    
+    return distance_table
 
 
 # =============================================================================
