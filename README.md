@@ -35,8 +35,8 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Spawn | To find the distance from the spawn to the rest of the relics |
+| Relics | To find the distance between other relics and the exit |
 
 ### Part 2b: Distance Storage
 

@@ -38,21 +38,8 @@ def explain_problem():
 # =============================================================================
 
 def select_sources(spawn, relics, exit_node):
-    """
-    Parameters
-    ----------
-    spawn : node
-    relics : list[node]
-    exit_node : node
-
-    Returns
-    -------
-    list[node]
-        No duplicates. Order does not matter.
-
-    TODO
-    """
-    pass
+    sources = set([spawn] + relics)
+    return list(sources)
 
 
 def run_dijkstra(graph, source):
