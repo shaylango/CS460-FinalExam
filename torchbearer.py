@@ -77,16 +77,14 @@ def precompute_distances(graph, spawn, relics, exit_node):
 # =============================================================================
 
 def dijkstra_invariant_check():
-    """
-    Returns
-    -------
-    str
-        Your Part 3 README answers, written as a string.
-        Must match what you wrote in README Part 3.
-
-    TODO
-    """
-    return "TODO"
+    return (
+        "- The stored distance is the optimal shortest path from the source.\n"
+        "- The distance is the shortest path that is known so far, which only uses the finalized nodes along the path.\n"
+        "- The distance of the source is 0 and all the others are infinity, which there are no wrong distances at the start.\n"
+        "- Having nonnegative edge weights means that no shorter path could be found through an unvisited node.\n"
+        "- All nodes that are finalized have the optimal shortest path from the source.\n"
+        "- Correct distances make sure that the route planner chooses the min cost path."
+    )
 
 
 # =============================================================================

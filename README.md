@@ -72,29 +72,29 @@
 > Do not copy the invariant text from the spec.
 
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  The stored distance is the optimal shortest path from the source.
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  The distance is the shortest path that is known so far, which only uses the finalized nodes along the path. 
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  The distance of the source is 0 and all the others are infinity, which there are no wrong distances at the start. 
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  Having nonnegative edge weights means that no shorter path could be found through an unvisited node. 
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  All nodes that are finalized have the optimal shortest path from the source.
 
 ### Part 3c: Why This Matters for the Route Planner
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Your answer here._
+Correct distances make sure that the route planner chooses the min cost path.
 
 ---
 
