@@ -44,11 +44,11 @@
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Nested Dictionary |
+| What the keys represent | Outer keys are starting nodes and inner keys are destination nodes |
+| What the values represent | Min distance between nodes |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Dictionaries use hash tables in constant time to get values |
 
 ### Part 2c: Precomputation Complexity
 

@@ -43,22 +43,23 @@ def select_sources(spawn, relics, exit_node):
 
 
 def run_dijkstra(graph, source):
-    """
-    Parameters
-    ----------
-    graph : dict[node, list[tuple[node, int]]]
-        graph[u] = [(v, cost), ...]. All costs are nonnegative integers.
-    source : node
+    distances = {node: float('inf') for node in graph}
+    distances[source] = 0
+    priority_queue = [(0, source)]
 
-    Returns
-    -------
-    dict[node, float]
-        Minimum cost from source to every node in graph.
-        Unreachable nodes map to float('inf').
+    while priority_queue:
+        current_distance, current_node = heapq.heappop(priority_queue)
+        
+        if current_distance > distances[current_node]:
+            continue
 
-    TODO
-    """
-    pass
+        for neighbor, weight in graph.get(current_node, []):
+
+            if current_distance + weight < distances[neighbor]:
+                distances[neighbor] = current_distance + weight
+                heapq.heappush(priority_queue, (distances[neighbor], neighbor))
+
+    return distances
 
 
 def precompute_distances(graph, spawn, relics, exit_node):
