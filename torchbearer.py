@@ -92,16 +92,14 @@ def dijkstra_invariant_check():
 # =============================================================================
 
 def explain_search():
-    """
-    Returns
-    -------
-    str
-        Your Part 4 README answers, written as a string.
-        Must match what you wrote in README Part 4.
-
-    TODO
-    """
-    return "TODO"
+    return(
+        "- Greedy picks the closest next relic without considering the cost of the route.\n"
+        "- Starting at S, the closest next relic is B with cost 1, while C and D cost 2, which moving between relics could have different costs.\n"
+        "- Greedy picks B first because it is the closest relic.\n"
+        "- S -> B -> D -> C -> T, total cost of 4\n"
+        "- Choosing the closest next relic does not always result in having a lower total cost.\n"
+        "- The algorithm must explore every possible order in which the relics can be visited to find the min total cost."
+    )
 
 
 # =============================================================================

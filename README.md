@@ -105,17 +105,17 @@ Correct distances make sure that the route planner chooses the min cost path.
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** Greedy picks the closest next relic without considering the cost of the route.
+- **Counter-example setup:** Starting at S, the closest next relic is B with cost 1, while C and D cost 2, which moving between relics could have different costs. 
+- **What greedy picks:** Greedy picks B first because it is the closest relic.
+- **What optimal picks:** S -> B -> D -> C -> T, total cost of 4
+- **Why greedy loses:** Choosing the closest next relic does not always result in having a lower total cost. 
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm must explore every possible order in which the relics can be visited to find the min total cost. 
 
 ---
 
