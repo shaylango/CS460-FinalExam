@@ -80,9 +80,9 @@ def dijkstra_invariant_check():
     return (
         "- The stored distance is the optimal shortest path from the source.\n"
         "- The distance is the shortest path that is known so far, which only uses the finalized nodes along the path.\n"
-        "- The distance of the source is 0 and all the others are infinity, which there are no wrong distances at the start.\n"
-        "- Having nonnegative edge weights means that no shorter path could be found through an unvisited node.\n"
-        "- All nodes that are finalized have the optimal shortest path from the source.\n"
+        "- Initialization: The distance of the source is 0 and all the others are infinity, which there are no wrong distances at the start.\n"
+        "- Maintenance: Having nonnegative edge weights means that no shorter path could be found through an unvisited node.\n"
+        "- Termination: All nodes that are finalized have the optimal shortest path from the source.\n"
         "- Correct distances make sure that the route planner chooses the min cost path."
     )
 
@@ -93,11 +93,11 @@ def dijkstra_invariant_check():
 
 def explain_search():
     return(
-        "- Greedy picks the closest next relic without considering the cost of the route.\n"
-        "- Starting at S, B cost 1, while C and D cost 2, which moving between relics could have different costs.\n"
-        "- Greedy picks B first because it is the closest relic.\n"
-        "- S -> B -> D -> C -> T, total cost of 4\n"
-        "- Choosing the closest next relic does not always result in having a lower total cost.\n"
+        "- The failure mode: Greedy picks the closest next relic without considering the cost of the route.\n"
+        "- Counter-example setup: Using the spec, the B is closest from S, and greedy would continue choosing relics in that order until reaching the exit.\n"
+        "- What greedy picks: S -> B -> C -> D -> T, total cost 301\n"
+        "- What optimal picks: S -> B -> D -> C -> T, total cost of 4\n"
+        "- Why greedy loses: Choosing the closest next relic does not always result in having a lower total cost.\n"
         "- The algorithm must explore every possible order in which the relics can be visited to find the min total cost."
     )
 
@@ -134,7 +134,7 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
             best[1] = relics_visited_order.copy()
         return
     
-    for next_relic in relics_remaining:
+    for next_relic in list(relics_remaining):
         travel_cost = dist_table.get(current_loc, {}).get(next_relic, float('inf'))
 
         if travel_cost != float('inf'):

@@ -78,8 +78,8 @@ Correct distances make sure that the route planner chooses the min cost path.
 ### Why Greedy Fails
 
 - **The failure mode:** Greedy picks the closest next relic without considering the cost of the route.
-- **Counter-example setup:** Starting at S, B cost 1, while C and D cost 2, which moving between relics could have different costs. 
-- **What greedy picks:** Greedy picks B first because it is the closest relic.
+- **Counter-example setup:** Using the spec, the B is closest from S, and greedy would continue choosing relics in that order until reaching the exit.
+- **What greedy picks:** S -> B -> C -> D -> T, total cost 301
 - **What optimal picks:** S -> B -> D -> C -> T, total cost of 4
 - **Why greedy loses:** Choosing the closest next relic does not always result in having a lower total cost. 
 
@@ -137,4 +137,4 @@ Correct distances make sure that the route planner chooses the min cost path.
 
 ## References
 
-- None beyond lecture notes.
+- https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/ , For Dijkstra's Algorithm
